@@ -37,14 +37,16 @@ Smart Hospital
 ```bash
 make server
 ```
-*The Crow server starts at `http://localhost:8080` with SQLite database `hospital.db` and CORS enabled.*
+
+_The Crow server starts at `http://localhost:8080` with SQLite database `hospital.db` and CORS enabled._
 
 ### 2. Run the Data Structures Test Suite
 
 ```bash
 make run
 ```
-*Compiles and benchmarks all 5 pure C data structures and C++ OOP models.*
+
+_Compiles and benchmarks all 5 pure C data structures and C++ OOP models._
 
 ### 3. Run the Next.js Frontend
 
@@ -52,7 +54,8 @@ make run
 npm install
 npm run dev
 ```
-*Open [http://localhost:3000](http://localhost:3000) in your browser.*
+
+_Open [http://localhost:3000](http://localhost:3000) in your browser._
 
 ---
 
@@ -85,3 +88,9 @@ smart-hospital/
     ├── main.cpp                # Algorithmic simulation & benchmark runner
     └── Makefile                # Multi-target build system (clang / clang++ C++20)
 ```
+
+## Latest Updates
+
+- Improved Smart Hospital backend.
+- Added patient management functionality.
+- Implemented patient check-in functionality.
