@@ -38,8 +38,7 @@ export default function LoginPage() {
             The queue reorders itself around who needs the doctor most.
           </h2>
           <p className="text-[13.5px] text-[#CFE7E4] max-w-[360px] leading-relaxed">
-            Urgency, vitals and waiting time feed a transparent scoring model — every position in the line can
-            be explained to staff on request.
+            Clinical urgency, patient vitals, and waiting duration are used in a clear scoring model — allowing staff to understand and explain each patient's queue position.
           </p>
           <div className="mt-10 border-t border-white/20 pt-4.5 space-y-1">
             <Row label="Patients waiting" value={waiting.length} />

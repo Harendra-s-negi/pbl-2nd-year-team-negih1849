@@ -12,10 +12,10 @@ C_CircularQueue* queue_create(int capacity) {
         free(q);
         return NULL;
     }
-    q->front = 0;
+    q->front =0;
     q->rear = -1;
     q->size = 0;
-    q->capacity = capacity;
+    q->capacity =capacity;
     return q;
 }
 
@@ -40,7 +40,7 @@ bool queue_dequeue(C_CircularQueue* q, C_PatientRecord* out_record) {
     if (out_record) {
         *out_record = q->items[q->front];
     }
-    q->front = (q->front + 1) % q->capacity;
+    q->front=(q->front + 1) % q->capacity;
     q->size--;
     return true;
 }

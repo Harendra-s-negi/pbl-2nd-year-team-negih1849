@@ -87,18 +87,18 @@ bool list_remove_by_token(C_DoublyLinkedList* list, const char* token, C_Patient
 
 void list_destroy(C_DoublyLinkedList* list) {
     if (!list) return;
-    C_ListNode* curr = list->head;
+    C_ListNode* curr =list->head;
     while (curr) {
         C_ListNode* next = curr->next;
         free(curr);
-        curr = next;
+        curr =next;
     }
     free(list);
 }
 
 void list_print(const C_DoublyLinkedList* list) {
     if (!list || list->size == 0) {
-        printf("   [List is empty]\n");
+        printf("  [List is empty]\n");
         return;
     }
     printf("   ┌───── Doubly Linked List Order (Size: %d) ─────┐\n", list->size);
@@ -106,7 +106,7 @@ void list_print(const C_DoublyLinkedList* list) {
     int idx = 0;
     while (curr) {
         printf("   │ [%d] Token: %-7s | Name: %-15s | Score: %3d │\n",
-               idx++, curr->data.token, curr->data.name, curr->data.effectiveScore);
+             idx++, curr->data.token, curr->data.name, curr->data.effectiveScore);
         curr = curr->next;
     }
     printf("   └───────────────────────────────────────────────┘\n");
