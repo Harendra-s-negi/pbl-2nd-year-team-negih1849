@@ -20,7 +20,7 @@ struct ClinicalVitals {
     int systolicBp;        // mmHg (120 normal)
     int oxygenSaturation;  // % (95-100 normal)
     int painLevel;         // 0-10 scale
-    int vitalScore;        // computed 0-25
+    int vitalScore;        
 };
 
 enum class PatientStatus {
@@ -65,12 +65,10 @@ public:
     }
 
     void calculateScores() {
-        // vitalScore (0-25) + pain (0-15) + ageScore (0-10) + riskPts (0-10)
         int ageScore = (age > 65 || age < 5) ? 8 : 2;
         int riskScore =std::min(static_cast<int>(riskFactors.size() * 3), 10);
         urgencyScore =std::min(vitals.vitalScore + vitals.painLevel + ageScore + riskScore, 80);
 
-        // Inversion/Starvation prevention bonus: +1 point per 10 mins waited, capped at 20
         int waitBonus =std::min(waitMinutes / 10, 20);
         effectiveScore =std::min(urgencyScore + waitBonus, 100);
     }
@@ -84,15 +82,15 @@ public:
 
     // In C++ std::priority_queue<T>, a < b means b has higher priority
     bool operator<(const Patient& other) const {
-        if (effectiveScore == other.effectiveScore) {
+        if (effectiveScore ==other.effectiveScore) {
             // Tie breaker: FIFO based on arrival time (earlier arrival gets priority)
-            return arrivalTime > other.arrivalTime;
+            return arrivalTime >other.arrivalTime;
         }
         return effectiveScore < other.effectiveScore;
     }
 
     bool operator==(const Patient& other) const {
-        return token == other.token || id == other.id;
+        return token ==other.token || id == other.id;
     }
 
     friend std::ostream& operator<<(std::ostream& os, const Patient& p) {

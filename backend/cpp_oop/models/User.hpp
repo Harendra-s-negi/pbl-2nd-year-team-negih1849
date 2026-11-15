@@ -3,7 +3,6 @@
  * @brief Abstract Base Class demonstrating C++ OOP:
  * - Data Abstraction & Encapsulation
  * - Pure Virtual Functions (Interface)
- * - Virtual Destructor (for safe polymorphic cleanup)
  * - Enum class & RBAC (Role-Based Access Control)
  */
 
@@ -41,7 +40,6 @@ public:
 
     virtual ~User() = default; // Essential for polymorphic deletion
 
-    // Pure virtual methods (making User an abstract class)
     virtual std::string getRoleName() const = 0;
     virtual bool hasPermission(Permission permission) const = 0;
     virtual void printDashboardSummary() const = 0;
