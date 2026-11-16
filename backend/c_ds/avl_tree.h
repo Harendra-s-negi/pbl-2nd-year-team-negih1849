@@ -1,13 +1,3 @@
-/**
- * @file avl_tree.h
- * @brief Pure C Self-Balancing AVL Binary Search Tree for Patient Indexing
- * 
- * Demonstrates:
- * - Height-balanced BST property: |height(left) - height(right)| <= 1
- * - Tree Rotations: Single (Left/Right) and Double (Left-Right / Right-Left)
- * - Guaranteed O(log N) search, insertion, and traversal
- */
-
 #ifndef AVL_TREE_H
 #define AVL_TREE_H
 
@@ -42,3 +32,4 @@ void avl_print(const C_AVLTree* tree);
 #endif
 
 #endif // AVL_TREE_H
+

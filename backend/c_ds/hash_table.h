@@ -1,14 +1,3 @@
-/**
- * @file hash_table.h
- * @brief Pure C Chaining Hash Table for O(1) patient lookup by token
- * 
- * Demonstrates:
- * - Hash function (djb2 string hash algorithm)
- * - Collision resolution via separate chaining
- * - Average O(1) insertion, lookup, and deletion
- * - Dynamic memory management
- */
-
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H
 
@@ -22,7 +11,7 @@ extern "C" {
 #define TABLE_SIZE 31
 
 typedef struct C_HashEntry {
-    char key[16]; // token
+    char key[16];
     C_PatientRecord value;
     struct C_HashEntry* next;
 } C_HashEntry;

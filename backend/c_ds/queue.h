@@ -1,13 +1,3 @@
-/**
- * @file queue.h
- * @brief Pure C Circular FIFO Queue for General Walk-in Patients
- * 
- * Demonstrates:
- * - Circular buffer array implementation
- * - Modulo arithmetic: index = (index + 1) % capacity
- * - O(1) enqueue and O(1) dequeue
- */
-
 #ifndef QUEUE_H
 #define QUEUE_H
 
@@ -40,3 +30,4 @@ void queue_print(const C_CircularQueue* q);
 #endif
 
 #endif // QUEUE_H
+

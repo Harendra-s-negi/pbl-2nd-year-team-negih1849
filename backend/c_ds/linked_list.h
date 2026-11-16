@@ -1,15 +1,3 @@
-/**
- * @file linked_list.h
- * @brief Pure C Doubly Linked List for patient queue manipulation
- * 
- * Demonstrates:
- * - Pointer manipulation (prev, next)
- * - Dynamic node allocation and deallocation
- * - O(1) insertion at head and tail
- * - O(1) deletion given pointer to node
- * - Bidirectional traversal
- */
-
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 

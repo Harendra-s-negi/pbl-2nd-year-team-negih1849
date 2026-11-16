@@ -7,6 +7,7 @@ static int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
+
 static int height(const C_AVLNode* node) {
     return node ? node->height : 0;
 }

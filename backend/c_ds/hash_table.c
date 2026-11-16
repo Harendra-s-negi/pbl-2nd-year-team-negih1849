@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-// DJB2 Hash Algorithm for strings
 static unsigned long hash_string(const char* str) {
     unsigned long hash = 5381;
     int c;
     while ((c = *str++)) {
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+        hash = ((hash << 5) + hash) + c; 
     }
     return hash % TABLE_SIZE;
 }

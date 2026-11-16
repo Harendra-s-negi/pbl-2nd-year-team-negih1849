@@ -1,24 +1,13 @@
-/**
- * @file server.cpp
- * @brief Smart Hospital Management System — Crow C++ REST API Server
- * 
- * Features:
- * - Crow Framework C++20 Routing: CROW_ROUTE(app, "/api/...")
- * - SQLite3 Relational Persistence (hospital.db)
- * - In-Memory Binary Max-Heap + O(1) Hash Map
- * - Full CORS Integration for Next.js (http://localhost:3000)
- */
-
 #include "include/crow.h"
 #include "c_ds/heap.h"
 #include "c_ds/linked_list.h"
 #include "c_ds/hash_table.h"
 
-#include "cpp_oop/models/User.hpp"
-#include "cpp_oop/models/Roles.hpp"
-#include "cpp_oop/models/Patient.hpp"
-#include "cpp_oop/engine/HospitalSystem.hpp"
-#include "db/DatabaseManager.hpp"
+#include "cpp_oop/models/User.h"
+#include "cpp_oop/models/Roles.h"
+#include "cpp_oop/models/Patient.h"
+#include "cpp_oop/engine/HospitalSystem.h"
+#include "db/DatabaseManager.h"
 
 #include <iostream>
 #include <mutex>

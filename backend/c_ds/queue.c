@@ -71,5 +71,5 @@ void queue_print(const C_CircularQueue* q) {
         printf("   │ [%d] Token: %-7s | Name: %-15s | Age: %2d │\n",
                i, q->items[idx].token, q->items[idx].name, q->items[idx].age);
     }
-    printf("   └────────────────────────────────────────────────────────┘\n");
+ printf("\n");
 }
