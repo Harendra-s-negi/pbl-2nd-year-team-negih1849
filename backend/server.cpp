@@ -1,13 +1,3 @@
-/**
- * @file server.cpp
- * @brief Smart Hospital Management System — Crow C++ REST API Server
- * 
- * Features:
- * - Crow Framework C++20 Routing: CROW_ROUTE(app, "/api/...")
- * - SQLite3 Relational Persistence (hospital.db)
- * - In-Memory Binary Max-Heap + O(1) Hash Map
- * - Full CORS Integration for Next.js (http://localhost:3000)
- */
 
 #include "include/crow.h"
 #include "c_ds/heap.h"
@@ -122,7 +112,6 @@ int main() {
 
         return crow::response(res.dump());
     });
-
     // 4. Crow REST Route: POST /api/doctor/call-next
     CROW_ROUTE(app, "/api/doctor/call-next").methods(crow::HTTPMethod::POST)([](){
         std::lock_guard<std::mutex> lock(g_mutex);

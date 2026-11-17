@@ -8,7 +8,7 @@
  * - Smart Pointers (std::unique_ptr, std::shared_ptr) for RAII
  */
 
-#pragma once
+#pragma once // used for preventing the headerfile inclusion multiple time
 
 #include "../models/User.hpp"
 #include "../models/Roles.hpp"
@@ -43,7 +43,7 @@ private:
     std::unique_ptr<IPriorityScorer> priorityScorer;
     ScoringConfig scoringConfig;
 
-    int tokenCounter = 1000;
+    int tokenCounter = 1000;// STARTING TOKEN FROM 1000 AND CHANGING AGAIN AND AGAIN 
 
     std::string generateNextToken() {
         tokenCounter++;

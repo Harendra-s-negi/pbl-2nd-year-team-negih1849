@@ -3,7 +3,7 @@
  * @brief Concrete Strategy implementation matching PRD Section 7
  */
 
-#pragma once
+#pragma once  // used for preventing the headerfile inclusion multiple time
 
 #include "IPriorityScorer.hpp"
 #include <algorithm>
