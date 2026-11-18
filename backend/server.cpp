@@ -7,6 +7,7 @@
 #include "cpp_oop/models/Roles.h"
 #include "cpp_oop/models/Patient.h"
 #include "cpp_oop/engine/HospitalSystem.h"
+#include "cpp_oop/engine/ReportManager.h"
 #include "db/DatabaseManager.h"
 
 #include <iostream>
@@ -151,6 +152,32 @@ int main() {
         res["success"] = true;
         res["minutesAdvanced"] = mins;
         return crow::response(res.dump());
+    });
+
+    // 6. Crow REST Route: POST /api/reports/discharge
+    CROW_ROUTE(app, "/api/reports/discharge").methods(crow::HTTPMethod::POST)([](const crow::request& req){
+        std::lock_guard<std::mutex> lock(g_mutex);
+        auto body = crow::json::load(req.body);
+        std::string token = body["token"];
+
+        Patient p;
+        if (!token.empty() && g_hospital.findPatientByToken(token, p)) {
+            std::string filename = "discharge_" + token + ".txt";
+            ReportManager::exportDischargeSummary(p, "Dr. A. Sharma", filename);
+            std::string content = ReportManager::readReportFile(filename);
+
+            crow::json::wvalue res;
+            res["success"] = true;
+            res["token"] = token;
+            res["filename"] = filename;
+            res["content"] = content;
+            return crow::response(res.dump());
+        }
+
+        crow::json::wvalue res;
+        res["success"] = false;
+        res["message"] = "Patient token not found";
+        return crow::response(404, res.dump());
     });
 
     // Run Crow HTTP server on port 8080 with multi-threading

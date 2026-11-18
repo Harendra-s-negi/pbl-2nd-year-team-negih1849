@@ -8,6 +8,7 @@
 #include "cpp_oop/models/Roles.h"
 #include "cpp_oop/models/Patient.h"
 #include "cpp_oop/engine/HospitalSystem.h"
+#include "cpp_oop/engine/ReportManager.h"
 
 #include <iostream>
 #include <iomanip>
@@ -193,6 +194,25 @@ void runHospitalSimulation() {
     hospital.printAuditStack(5);
 }
 
+void runFileHandlingDemo() {
+    cout << "\n=========================================\n";
+    cout << " 4. TESTING FILE STREAMS & REPORTS (FSTREAM)\n";
+    cout << "=========================================\n\n";
+
+    ClinicalVitals v{120, 150, 92, 7, 20};
+    Patient p("PT-205", "T-1005", "Leela Menon", 72, "F", "Cardiology", "D-101", v, {"cardiac"}, 15);
+
+    string dischargeFile = "discharge_T1005.txt";
+    cout << "Exporting patient discharge summary to " << dischargeFile << "...\n";
+    if (ReportManager::exportDischargeSummary(p, "Dr. A. Sharma", dischargeFile)) {
+        cout << "Discharge summary successfully written using ofstream.\n\n";
+    }
+
+    cout << "Reading discharge summary back using ifstream:\n";
+    string reportContent = ReportManager::readReportFile(dischargeFile);
+    cout << reportContent << "\n";
+}
+
 int main() {
     cout << "\n=========================================\n";
     cout << "   SMART HOSPITAL MANAGEMENT SYSTEM\n";
@@ -201,6 +221,7 @@ int main() {
     runDataStructuresDemo();
     runOOPDemo();
     runHospitalSimulation();
+    runFileHandlingDemo();
 
     cout << "\nAll tests completed successfully.\n";
     return 0;

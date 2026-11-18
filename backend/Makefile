@@ -7,7 +7,7 @@ CXXFLAGS = -std=c++20 -Wall -Wextra -O2 -I c_ds -I.
 C_SRCS = c_ds/heap.c c_ds/linked_list.c c_ds/hash_table.c c_ds/queue.c c_ds/avl_tree.c
 C_OBJS = $(C_SRCS:.c=.o)
 
-CPP_SRCS = cpp_oop/models/User.cpp cpp_oop/models/Roles.cpp cpp_oop/models/Patient.cpp cpp_oop/engine/HospitalSystem.cpp db/DatabaseManager.cpp
+CPP_SRCS = cpp_oop/models/User.cpp cpp_oop/models/Roles.cpp cpp_oop/models/Patient.cpp cpp_oop/engine/HospitalSystem.cpp cpp_oop/engine/ReportManager.cpp db/DatabaseManager.cpp
 CPP_OBJS = $(CPP_SRCS:.cpp=.o)
 
 PBL_TARGET = smart_hospital_pbl
