@@ -1,0 +1,50 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# C / C++ build outputs
+*.o
+smart_hospital_pbl
+backend/smart_hospital_pbl
+smart_hospital_server
+backend/smart_hospital_server
+
+# SQLite Database
+*.db
+*.db-journal
+
+# Local Study & Viva Notes (Private on local machine)
+*VIVA_GUIDE*
+*GUIDE*
+*.local.md
+
+
+
