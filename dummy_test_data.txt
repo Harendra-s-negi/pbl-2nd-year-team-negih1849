@@ -1,0 +1,4 @@
+Dummy Git Test File
+Purpose: Testing Git add, commit, and push workflow.
+This is synthetic test data only.
+Not part of the actual project.
